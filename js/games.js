@@ -1,0 +1,2 @@
+const title = "NBA"
+const games = [{"jogo": 0, "times": ["Golden State Warriors", "Orlando Magic"], "odds": ["1.33", "15.00", "3.75"]}, {"jogo": 1, "times": ["Atlanta Hawks", "New York Knicks"], "odds": ["1.70", "14.00", "2.37"]}, {"jogo": 2, "times": ["Chicago Bulls", "Milwaukee Bucks"], "odds": ["4.00", "15.00", "1.28"]}, {"jogo": 3, "times": ["Los Angeles Clippers", "Denver Nuggets"], "odds": ["3.25", "15.00", "1.40"]}]
