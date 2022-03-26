@@ -8,29 +8,48 @@ const setLocalStorage = (banca) => localStorage.setItem('banca', JSON.stringify(
 
 const displayOdds = () => {
     document.querySelector('.header').innerHTML = title
-    document.querySelector('.sub-header').innerHTML = `
-        <div class="odd-description">
-            <span>Time 1</span>
-            <span>Empate</span>
-            <span>Time 2</span>
-        </div>
-    `
+    
     const container = document.querySelector('.odds-container')
-    games.forEach(element => {
-        container.innerHTML +=
-            `<div class = 'game-row'>
-                <div class= 'game'>${element.jogo + 1}</div>
-                <div class = 'team-odds'>
-                    <div class= 'team'>${element.times[0]} - ${element.times[1]}</div>
-                    <div class= 'odds-wraper'>
-                        <div class='odds' data-game=${element.jogo} data-number=0>${element.odds[0]}</div>
-                        <div class='odds' data-game=${element.jogo} data-number=1>${element.odds[1]}</div>
-                        <div class='odds' data-game=${element.jogo} data-number=2>${element.odds[2]}</div>
-                    </div>
-                </div>
+    if (games[0].odds.length === 3){
+        document.querySelector('.sub-header').innerHTML = `
+            <div class="odd-description">
+                <span>Time 1</span>
+                <span>Empate</span>
+                <span>Time 2</span>
             </div>
         `
-    });   
+        games.forEach(element => {
+            container.innerHTML +=
+                `<div class = 'game-row'>
+                    <div class= 'game'>${element.jogo + 1}</div>
+                    <div class = 'team-odds'>
+                        <div class= 'team'>${element.times[0]} - ${element.times[1]}</div>
+                        <div class= 'odds-wraper'>
+                            <div class='odds' data-game=${element.jogo} data-number=0>${element.odds[0]}</div>
+                            <div class='odds' data-game=${element.jogo} data-number=1>${element.odds[1]}</div>
+                            <div class='odds' data-game=${element.jogo} data-number=2>${element.odds[2]}</div>
+                        </div>
+                    </div>
+                </div>
+            `
+        })
+    }else{
+        games.forEach(element => {
+            container.innerHTML +=
+                `<div class = 'game-row'>
+                    <div class= 'game'>${element.jogo + 1}</div>
+                    <div class = 'team-odds'>
+                        <div class= 'team'>${element.times[0]} - ${element.times[1]}</div>
+                        <div class= 'odds-wraper'>
+                            <div class='odds' data-game=${element.jogo} data-number=0>${element.odds[0]}</div>
+                            <div class='odds' data-game=${element.jogo} data-number=1>${element.odds[1]}</div>
+                        </div>
+                    </div>
+                </div>
+            `
+        })
+    }
+    ;   
     ;
 }
 
